@@ -1,0 +1,231 @@
+:root {
+    --main-color: rgb(39, 39, 39);
+    --container-padding : 300px;
+}
+
+* {
+    margin: 0;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.vertical-alignment {
+    align-items: center;
+    display: flex;
+}
+
+.horizontal-alignment {
+    justify-content: center;
+    display: flex;
+}
+
+
+
+/* Header ___________________________________________________________________________________________ */
+
+header {
+    --padding : 10px;
+    position: fixed;
+    width: calc(100% - var(--padding) * 2);
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+    z-index: 1;
+    transition: 0.7s;
+    a {
+        margin: 0 5px;
+    }
+}
+
+#main-header {
+    background-color: transparent;
+}
+
+#tictactoe-header {
+    background-color: var(--main-color);
+    box-shadow: 0 0 3px black;
+
+}
+
+#logo img {
+    width: 40px;
+}
+
+.button {
+    transition: 0.3s;
+    padding: 3px;
+    border-radius: 3px;
+    width: 120px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* Carousel _____________________________________________________________________________________________ */
+
+#carousel {
+    background: url("sources/backgrounds/1.png");
+    background-size: cover;
+    height: 80vh;
+    transition: background-image 1s ease-in-out;
+}
+
+#carousel-text {
+    width: 500px;
+    text-align: center;
+}
+
+
+
+/* Text _________________________________________________________________________________________________ */
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text {
+    margin: 30px 300px;
+    p {
+        color: black;
+    }
+}
+
+
+
+/* Games List _______________________________________________________________________________________ */
+
+#games-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--container-padding);
+    margin: 0 0 30px;
+}
+
+.games-list-column {
+    width: 300px;
+    position: relative;
+    text-align: center;
+}
+
+.games-list-title {
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+.games-list-image {
+    height: 500px;
+    width: inherit;
+    transition: 0.5s;
+    filter: brightness(0.4);
+}
+
+.games-list-column:hover {
+    .games-list-image {
+        filter: brightness(0.2);
+    }
+}
+
+
+
+/* Footer ___________________________________________________________________________________________ */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px var(--container-padding);
+    background-color: rgb(61, 61, 61);
+    
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    p {
+        font-weight: bold;
+        font-size: large;
+        margin: 0 0 3px;
+    }
+    
+    a {
+        display: inline-block;
+        margin: 1px 0;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* TicTacToe ________________________________________________________________________________________ */
+
+#tictactoe-body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tictactoe {
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#board {
+    height: 360px;
+    width: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    button {
+        color: black;
+        font-size: 80px;
+        width: 120px;
+        height: 120px;
+    }
+
+}
+
+#results {
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    p {
+        color: black;
+        height: 70px;
+        font-size: 50px;
+    }
+}
+
+#restart-button {
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    font-size: 30px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 3px 1px grey;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#restart-button:hover {
+    filter: brightness(0.5);
+}
